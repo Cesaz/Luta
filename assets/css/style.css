@@ -24,3 +24,23 @@
     height: 200px;
     overflow-y: scroll;
 }
+
+.personal_information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+}
+
+.personal_information span {
+    margin-top: 10px;
+}
+
+.social img {
+    width: 32px;
+    height: 32px;
+}
