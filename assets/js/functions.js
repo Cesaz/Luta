@@ -79,7 +79,7 @@ const stage = {
         let f2Pct = (this.fighter2.life / this.fighter2.maxLife) * 100;
         this.fighter2El.querySelector('.bar').style.width = `${f2Pct}%`;
     },
-
+    
     doAttack(attacking, attacked) {
         if (attacking.life <= 0 || attacked.life <= 0) {
             log.addMessage('Alguém tá morto, não pode atacar.'); // Verifica se algum lutador está morto e exibe mensagem de erro
