@@ -9,31 +9,56 @@
 </head>
 
 <body>
-    <div class="fight_area">
+    <div class="screen_menu">
+        <input type="text" id="playerName" placeholder="Digite seu nome">
 
-        <div id="char">
-            <div class="lifebar">
-                <div class="bar" style="width: 10%;"></div>
+        <div class="caracters">
+            <div class="caracter">
+                <label for="select_warrior">Escolha seu Personagem:</label>
+                <select id="select_warrior">
+                    <option value="option1">Knight</option>
+                    <option value="option2">Sorcerer</option>
+                </select>
             </div>
-            <strong class="name">--</strong>
-            <div>
-                <button class="attack_button">Atacar</button>
+            <div class="caracter">
+                <label for="select_oponent">Selecione seu Adversário:</label>
+                <select id="select_oponent">
+                    <option value="option1">Little Monster</option>
+                    <option value="option2">Big Monster</option>
+                </select>
             </div>
         </div>
 
-        <div id="monster">
-            <div class="lifebar">
-                <div class="bar" style="width: 10%"></div>
-            </div>
-            <strong class="name">--</strong>
-            <div>
-                <button class="attack_button">Atacar</button>
-            </div>
-        </div>
-
+        <button id="button" onclick="send_name()">OK</button>
     </div>
 
-    <ul class="log"></ul>
+    <div class="screen_battle">
+        <div class="fight_area">
+
+            <div id="char">
+                <div class="lifebar">
+                    <div class="bar" style="width: 10%;"></div>
+                </div>
+                <strong class="name">--</strong>
+                <div>
+                    <button class="attack_button">Atacar</button>
+                </div>
+            </div>
+
+            <div id="monster">
+                <div class="lifebar">
+                    <div class="bar" style="width: 10%"></div>
+                </div>
+                <strong class="name">--</strong>
+                <div>
+                    <button class="attack_button">Atacar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <ul class="log"></ul>
+    </div>
 
     <footer>
         <div class="personal_information">
