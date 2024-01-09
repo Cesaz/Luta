@@ -120,3 +120,12 @@ const log = {
         }
     }
 }
+
+function send_name() {
+    let playersName = document.querySelector('#playerName');
+    let playerCharacter = document.querySelector('#select_warrior');
+    let playerAdversary = document.querySelector('#select_oponent');
+    document.querySelector('.screen_menu').style.display = 'none';
+    document.querySelector('.screen_battle').style.display = 'block';
+    document.querySelector('body').style.backgroundImage = 'none';
+}
