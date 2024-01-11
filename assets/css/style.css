@@ -1,6 +1,7 @@
 body {
     background-image: url('../../images/tela01.jpeg');
     background-size: cover;
+    background-color: #333;
 }
 
 .fight_area {
@@ -106,4 +107,17 @@ body {
     text-align: center;
     border-radius: 20px;
     cursor: pointer;
+}
+
+.char_background, .monster_background {
+    flex: 1;
+    height: 100vh;
+}
+
+.char_background {
+    background-image: url('../../images/guerreiro.jpeg');
+}
+
+.monster_background {
+    background-image: url('../../images/monstro\ grande.jpeg');
 }
