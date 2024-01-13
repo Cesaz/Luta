@@ -62,9 +62,11 @@ const stage = {
         this.fighter1El = fighter1El;
         this.fighter2El = fighter2El;
 
-        this.fighter1El.querySelector('.attack_button').addEventListener('click', () => this.doAttack(this.fighter1, this.fighter2));
-        this.fighter2El.querySelector('.attack_button').addEventListener('click', () => this.doAttack(this.fighter2, this.fighter1));
-    
+        this.fighter1El.querySelector('.attack_button').addEventListener('click', () => {
+            this.doAttack(this.fighter1, this.fighter2);
+            setTimeout(() => this.doAttack(this.fighter2, this.fighter1), 3000);
+        });
+
         this.update();
     },
 
