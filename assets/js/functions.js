@@ -64,6 +64,7 @@ const stage = {
 
         this.fighter1El.querySelector('.attack_button').addEventListener('click', () => {
             this.doAttack(this.fighter1, this.fighter2);
+            document.querySelector('.button_position').style.display = 'none';
             setTimeout(() => this.doAttack(this.fighter2, this.fighter1), 3000);
         });
 
@@ -80,11 +81,19 @@ const stage = {
         this.fighter2El.querySelector('.name').innerHTML = `${this.fighter2.name} - ${this.fighter2.life.toFixed(1)} HP`;
         let f2Pct = (this.fighter2.life / this.fighter2.maxLife) * 100;
         this.fighter2El.querySelector('.bar').style.width = `${f2Pct}%`;
+
+        document.querySelector('.button_position').style.display = 'flex';
     },
     
     doAttack(attacking, attacked) {
+        let battleLog = document.querySelector('.battle_log');
+
         if (attacking.life <= 0 || attacked.life <= 0) {
             log.addMessage('Alguém tá morto, não pode atacar.'); // Verifica se algum lutador está morto e exibe mensagem de erro
+            battleLog.innerHTML = 'Alguém tá morto, não pode atacar.';
+            document.querySelector('.battle_log').style.backgroundColor = 'white';
+            document.querySelector('.button_position').style.display = 'none';
+            document.querySelector('.restart').style.display = 'flex';
             return;
         }
 
@@ -98,8 +107,12 @@ const stage = {
             attacked.life -= actualAttack;
             attacked.life = attacked.life < 0 ? 0 : attacked.life;
             log.addMessage(`${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}`); // Exibe mensagem de ataque bem-sucedido
+            battleLog.innerHTML = `${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}`;
+            document.querySelector('.battle_log').style.backgroundColor = 'green';
         } else {
             log.addMessage(`${attacked.name} conseguiu defender...`); // Exibe mensagem de defesa bem-sucedida
+            battleLog.innerHTML = `${attacked.name} conseguiu defender...`;
+            document.querySelector('.battle_log').style.backgroundColor = 'red';
         }
 
         this.update();
@@ -123,11 +136,3 @@ const log = {
     }
 }
 
-function send_name() {
-    let playersName = document.querySelector('#playerName');
-    let playerCharacter = document.querySelector('#select_warrior');
-    let playerAdversary = document.querySelector('#select_oponent');
-    document.querySelector('.screen_menu').style.display = 'none';
-    document.querySelector('.screen_battle').style.display = 'block';
-    document.querySelector('body').style.backgroundImage = 'none';
-}
