@@ -62,10 +62,15 @@ const stage = {
         this.fighter1El = fighter1El;
         this.fighter2El = fighter2El;
 
+        let audioPlay = document.getElementById('player_audio');
+        let monsterAudioPlay = document.getElementById('monster_audio');
+
         this.fighter1El.querySelector('.attack_button').addEventListener('click', () => {
             this.doAttack(this.fighter1, this.fighter2);
+            audioPlay.play();
             document.querySelector('.button_position').style.display = 'none';
             setTimeout(() => this.doAttack(this.fighter2, this.fighter1), 3000);
+            setTimeout(() => monsterAudioPlay.play(), 2999);
         });
 
         this.update();
@@ -135,4 +140,3 @@ const log = {
         }
     }
 }
-
