@@ -4,60 +4,6 @@ body {
     background-color: #333;
 }
 
-.fight_area {
-    display: flex;
-    gap: 20px;
-}
-
-#char, #monster {
-    flex: 1;
-}
-
-.lifebar {
-    height: 10px;
-    border: 1px solid #333;
-    border-radius: 5px;
-}
-
-.lifebar .bar {
-    height: inherit;
-    background-color: red;
-    border-radius: 5px;
-}
-
-.log {
-    display: none;
-    margin-top: 200px;
-    border: 1px dotted #999;
-    height: 200px;
-    overflow-y: scroll;
-}
-
-.personal_information {
-    background-color: #333;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 50px;
-    right: 0;
-    bottom: 10px;
-    left: 0;
-    color: #FFF;
-}
-
-.personal_information span {
-    margin-top: 10px;
-}
-
-.social img {
-    width: 32px;
-    height: 32px;
-    background-color: #FFF;
-    border-radius: 50px;
-}
-
 .screen_battle {
     display: none;
 }
@@ -173,3 +119,74 @@ body {
     height: 50px;
     cursor: pointer;
 }
+
+.fight_area {
+    display: flex;
+    gap: 20px;
+}
+
+#char, #monster {
+    flex: 1;
+}
+
+.lifebar {
+    height: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.lifebar .bar {
+    height: inherit;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.log {
+    display: none;
+    margin-top: 200px;
+    border: 1px dotted #999;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.personal_information {
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50px;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    color: #FFF;
+}
+
+.personal_information span {
+    margin-top: 10px;
+}
+
+.personal_information span a {
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #FFF;
+    color: black;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.personal_information span a:hover {
+    background-color: #333;
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.social img {
+    width: 32px;
+    height: 32px;
+    background-color: #FFF;
+    border-radius: 50px;
+}
+
